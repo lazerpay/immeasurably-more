@@ -2,12 +2,16 @@ import Image from "next/image";
 
 export default function VideoCard({ content }) {
     return (
-        <div className="w-full rounded-2xl pb-8">
+        <div className="w-full rounded-2xl pb-8 max-w-[382px] lg:max-w-[296px]">
             <Image
                 src={content.image.url}
                 alt="Video Card Poster"
                 width={content.image.width}
                 height={content.image.height}
+                style={{
+                    display: 'block',
+                    margin: '0 auto'
+                }}
             />
             {content.weekText ? 
             <p className="mx-auto text-center font-mulish text-xl font-bold leading-[30px]">{content.weekText}</p>

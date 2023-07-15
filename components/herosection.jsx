@@ -4,7 +4,7 @@ import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 export default function HeroSection({ section }) {
     return (
-        <div className="w-full h-[459px] relative overflow-hidden" style={{
+        <div className="w-full h-[415px] relative overflow-hidden md:h-[459px]" style={{
             background: section.background.hex
         }}>
             <Image
@@ -33,7 +33,7 @@ export default function HeroSection({ section }) {
                     zIndex: "100",
                     transform: "translate(-50%, -50%)"
                 }}
-                className="block md:hidden"
+                className="block lg:hidden"
             />
             <Image
                 src={section.largeHeroText.url}
@@ -47,7 +47,7 @@ export default function HeroSection({ section }) {
                     zIndex: "100",
                     transform: "translate(-50%, -50%)"
                 }}
-                className="hidden md:block"
+                className="hidden lg:block"
             />
             <button className="btn-primary absolute z-100 top-6 right-6 gap-2 px-6 py-2">
                 <p className="text-white font-mulish font-bold">{section.buttonText}</p>
