@@ -1,4 +1,6 @@
 import HeroSection from "@/components/herosection";
+import ListenSection from "@/components/listensection";
+import TabSection from "@/components/tabsection";
 import { gql, GraphQLClient } from "graphql-request";
 
 export default function Home({ data }) {
@@ -7,6 +9,12 @@ export default function Home({ data }) {
             {data.home.homepageContent.map((section, index) => {
                 if(section.__typename === "HeroSectionRecord") {
                     return <HeroSection section={section} />
+                }
+                else if(section.__typename === "TabSectionRecord") {
+                    return <TabSection section={section} />
+                }
+                else if(section.__typename === "ListenSectionRecord") {
+                    return <ListenSection section={section} />
                 }
             })}
         </div>
@@ -49,6 +57,38 @@ const query = gql`
                     }
                     background {
                         hex
+                    }
+                }
+                ...on TabSectionRecord {
+                    __typename
+                    tabLabel1
+                    tabLabel2
+                    description
+                    grey {
+                      hex
+                    }
+                    borderColor {
+                      hex
+                    }
+                }
+                ...on ListenSectionRecord {
+                    __typename
+                    imageSmall {
+                      id
+                      url
+                      width
+                      height
+                    }
+                    imageLarge {
+                      id
+                      url
+                      width
+                      height
+                    }
+                    description
+                    buttonText
+                    background {
+                      hex
                     }
                 }
             }

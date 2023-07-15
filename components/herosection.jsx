@@ -49,7 +49,7 @@ export default function HeroSection({ section }) {
                 }}
                 className="hidden md:block"
             />
-            <button className="absolute z-100 top-6 right-6 bg-black flex flex-row items-center gap-2 rounded-2xl px-6 py-2">
+            <button className="absolute z-100 top-6 right-6 bg-black flex flex-row items-center gap-2 rounded-2xl px-6 py-2 cursor-pointer">
                 <p className="text-white font-mulish font-bold">{section.buttonText}</p>
                 <FontAwesomeIcon icon={faArrowRightFromBracket} className="text-white" />
             </button>
