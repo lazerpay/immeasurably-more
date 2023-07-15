@@ -4,7 +4,11 @@ import { gql, GraphQLClient } from "graphql-request";
 export default function Home({ data }) {
     return (
         <div>
-            <HeroSection content={data.home.homepageContent[0]} />
+            {data.home.homepageContent.map((section, index) => {
+                if(section.__typename === "HeroSectionRecord") {
+                    return <HeroSection section={section} />
+                }
+            })}
         </div>
     )
 }
@@ -22,14 +26,29 @@ const query = gql`
                     heroImage {
                         id
                         url
+                        width
+                        height
+                    }
+                    heroImageSmall {
+                        id
+                        url
+                        width
+                        height
                     }
                     largeHeroText {
                         id
                         url
+                        width
+                        height
                     }
                     smallHeroText {
                         id
                         url
+                        width
+                        height
+                    }
+                    background {
+                        hex
                     }
                 }
             }
