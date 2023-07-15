@@ -3,3 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'PP Editorial New';
+    src: url('../static/fonts/PPEditorialNew-Italic.otf') format('otf');
+}
+
+@layer components {
+  .btn-primary {
+    background: #000;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+
+  .btn-outline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 16px;
+    border: 1px solid #000;
+  }
+}

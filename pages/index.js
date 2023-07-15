@@ -1,6 +1,9 @@
 import HeroSection from "@/components/herosection";
 import ListenSection from "@/components/listensection";
 import TabSection from "@/components/tabsection";
+import TeachingsSection from "@/components/teachingssection";
+import DownloadSection from '@/components/downloadsection';
+import QuestionSection from '@/components/questionsection';
 import { gql, GraphQLClient } from "graphql-request";
 
 export default function Home({ data }) {
@@ -15,6 +18,15 @@ export default function Home({ data }) {
                 }
                 else if(section.__typename === "ListenSectionRecord") {
                     return <ListenSection section={section} />
+                }
+                else if(section.__typename === "TeachingsSectionRecord") {
+                    return <TeachingsSection section={section} />
+                }
+                else if(section.__typename === "DownloadSectionRecord") {
+                    return <DownloadSection section={section} />
+                }
+                else if(section.__typename === "QuestionSectionRecord") {
+                    return <QuestionSection section={section} />
                 }
             })}
         </div>
@@ -89,6 +101,60 @@ const query = gql`
                     buttonText
                     background {
                       hex
+                    }
+                }
+                ...on TeachingsSectionRecord {
+                    __typename
+                    title
+                    description
+                    videoCards {
+                      image {
+                        id
+                        url
+                        width
+                        height
+                      }
+                      weekText
+                      textImage {
+                        id
+                        url
+                        width
+                        height
+                      }
+                      videoTitle
+                      videoTitleColor {
+                        hex
+                      }
+                    }
+                }
+                ...on DownloadSectionRecord {
+                    __typename
+                    titleFront
+                    titleItalic
+                    titleRear
+                    description
+                    primaryButtonText
+                    primaryButtonBackground {
+                        hex
+                    }
+                    downloadRows {
+                      title
+                      buttonText
+                      borderColor {
+                        hex
+                      }
+                    }
+                }
+                ...on QuestionSectionRecord {
+                    __typename
+                    title
+                    description
+                    link
+                    background {
+                      hex
+                    }
+                    linkColor {
+                        hex
                     }
                 }
             }

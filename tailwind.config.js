@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mulish: ['Mulish', 'sans-serif'],
+        ppeditorial: ['PP Editorial New', 'cursive'],
       }
     },
   },
