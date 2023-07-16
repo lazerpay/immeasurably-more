@@ -130,8 +130,8 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className='xl:mt-6 xl:py-6 xl:px-8 xl:flex xl:flex-row-reverse xl:items-center xl:justify-between xl:border-b xl:border-[#dddfe3]'>
-                <div className='flex flex-row items-center justify-center gap-6 mt-4 py-4 border-b border-[#dddfe3]'>
+            <div className='xl:mt-6 xl:px-8 xl:flex xl:flex-row-reverse xl:items-center xl:justify-between xl:border-b xl:border-[#dddfe3]'>
+                <div className='flex flex-row items-center justify-center gap-6 mt-4 py-4 border-b border-[#dddfe3] xl:py-6 xl:border-none'>
                     <Image
                         src={YouTube}
                         alt="YouTube"
@@ -150,7 +150,7 @@ export default function Footer() {
                     />
                 </div>
 
-                <div className='py-4 px-12 border-b border-[#dddfe3] xl:border-none xl:flex xl:flex-row xl:gap-2 xl:px-0'>
+                <div className='py-4 px-12 border-b border-[#dddfe3] xl:border-none xl:flex xl:flex-row xl:gap-2 xl:px-0 xl:py-6'>
                     <p className='text-center font-mulish text-[#18181c] text-base font-normal'>
                         11416 E. Independence Blvd Suite N, Matthews, NC, 28105
                     </p>
@@ -159,7 +159,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className='hidden xl:flex xl:py-6 xl:px-8 xl:flex-row xl:items-center xl:justify-between'>
+            <div className='hidden xl:flex xl:py-4 xl:px-8 xl:flex-row xl:items-center xl:justify-between'>
                 <div className='flex flex-row items-center'>
                     <p className='font-mulish text-base font-normal text-[#777c88]'>© 2022 Elevation Church.  All Rights Reserved </p>
                     <a className='font-mulish text-sm ml-4 font-bold text-[#777c88]'>Terms of Use</a>
